@@ -1,0 +1,1341 @@
+/* =========================================
+   MOBILE APP STYLE
+========================================= */
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  background: #f4f6fa;
+  color: #172033;
+
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================
+   APP CONTAINER
+========================================= */
+
+.app {
+  position: relative;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+
+  overflow: hidden;
+
+  background: #f4f6fa;
+
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.app-header {
+  position: relative;
+
+  width: 100%;
+  height: 68px;
+
+  flex-shrink: 0;
+
+  padding: max(8px, env(safe-area-inset-top)) 16px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #f4f6fa;
+
+  border: none;
+
+  z-index: 20;
+}
+
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-logo {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #1976ff, #3d8cff);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  box-shadow: 0 5px 15px rgba(25, 118, 255, 0.22);
+}
+
+.app-logo span {
+  width: 3px;
+  height: 17px;
+
+  border-radius: 5px;
+
+  background: white;
+}
+
+.app-logo span:nth-child(1) {
+  height: 10px;
+}
+
+.app-logo span:nth-child(3) {
+  height: 21px;
+}
+
+.app-header h1 {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  color: #172033;
+
+  letter-spacing: -0.3px;
+}
+
+.app-header p {
+  margin: 2px 0 0;
+
+  font-size: 8px;
+
+  color: #8d97a6;
+}
+
+.profile-button {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #e7f0ff;
+
+  color: #1976ff;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================================
+   MAIN APP CONTENT
+========================================= */
+
+.app-content {
+  width: 100%;
+
+  height: calc(100dvh - 68px);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding: 20px 16px calc(105px + env(safe-area-inset-bottom));
+
+  margin: 0;
+
+  -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior-y: contain;
+
+  scrollbar-width: none;
+}
+
+.app-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome {
+  margin-bottom: 18px;
+}
+
+.welcome-small {
+  margin: 0 0 6px;
+
+  color: #1976ff;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.welcome h2 {
+  margin: 0;
+
+  font-size: 27px;
+
+  line-height: 1.08;
+
+  letter-spacing: -1.2px;
+
+  color: #172033;
+}
+
+.welcome h2 span {
+  color: #1976ff;
+}
+
+/* =========================================
+   PROGRESS CARD
+========================================= */
+
+.progress-card {
+  width: 100%;
+
+  padding: 16px;
+
+  margin-bottom: 20px;
+
+  border-radius: 17px;
+
+  background: linear-gradient(135deg, #1976ff, #3b8cff);
+
+  color: white;
+
+  box-shadow: 0 8px 20px rgba(25, 118, 255, 0.2);
+}
+
+.progress-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+
+  opacity: 0.75;
+}
+
+.progress-top strong {
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.progress-percent {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.progress-track {
+  width: 100%;
+
+  height: 5px;
+
+  margin-top: 14px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: white;
+
+  transition: width 0.35s ease;
+}
+
+.progress-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 7px;
+
+  font-size: 7px;
+
+  opacity: 0.75;
+}
+
+.complete-message {
+  font-weight: 800;
+}
+
+/* =========================================
+   FILTER
+========================================= */
+
+.filter-section {
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+.filter-scroll {
+  display: flex;
+
+  gap: 7px;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.filter-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-button {
+  flex-shrink: 0;
+
+  height: 29px;
+
+  padding: 0 11px;
+
+  border: 1px solid #e0e5ec;
+
+  border-radius: 20px;
+
+  background: white;
+
+  color: #7c8797;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.filter-button span {
+  min-width: 14px;
+  height: 14px;
+
+  padding: 0 3px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #f0f2f5;
+
+  font-size: 7px;
+}
+
+.filter-button.active {
+  background: #172033;
+
+  border-color: #172033;
+
+  color: white;
+}
+
+.filter-button.now.active {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+.filter-button.next.active {
+  background: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.filter-button.later.active {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+/* =========================================
+   TASK SECTION
+========================================= */
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+}
+
+.section-heading h3 {
+  margin: 0;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  color: #202b3c;
+}
+
+.section-heading > span {
+  font-size: 7px;
+
+  color: #9aa3b0;
+}
+
+/* =========================================
+   TASK LIST
+========================================= */
+
+.task-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.task-card {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 53px;
+
+  padding: 10px 9px;
+
+  display: grid;
+
+  grid-template-columns:
+    24px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border: 1px solid #e7ebf0;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 7px rgba(30, 50, 80, 0.035);
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.task-card:active {
+  transform: scale(0.985);
+}
+
+.task-card.completed {
+  opacity: 0.55;
+}
+
+.task-card.completed h4 {
+  text-decoration: line-through;
+}
+
+.task-card.overdue {
+  border-left: 3px solid #ef4444;
+}
+
+/* =========================================
+   CHECK BUTTON
+========================================= */
+
+.task-check {
+  width: 23px;
+  height: 23px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  border: 1.5px solid #d5dce5;
+
+  background: white;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+
+  flex-shrink: 0;
+}
+
+.task-check.checked {
+  background: #22c55e;
+
+  border-color: #22c55e;
+}
+
+/* =========================================
+   TASK INFORMATION
+========================================= */
+
+.task-info {
+  min-width: 0;
+
+  padding-right: 28px;
+}
+
+.task-info h4 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #293447;
+
+  font-size: 9px;
+
+  line-height: 13px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.task-meta {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 3px;
+
+  margin-top: 3px;
+
+  color: #9aa3b0;
+
+  font-size: 6px;
+}
+
+.overdue-text {
+  color: #ef4444;
+
+  font-size: 6px;
+
+  font-weight: 800;
+}
+
+/* =========================================
+   TASK ACTIONS
+========================================= */
+
+.task-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+}
+
+.task-actions button {
+  width: 22px;
+  height: 22px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 6px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+}
+
+.task-actions button:first-child {
+  background: #edf4ff;
+
+  color: #1976ff;
+}
+
+.task-actions button:last-child {
+  background: #fff1f2;
+
+  color: #ef4444;
+}
+
+/* =========================================
+   PRIORITY
+========================================= */
+
+.task-priority {
+  position: absolute;
+
+  top: 6px;
+  right: 7px;
+
+  border: none;
+
+  background: transparent;
+
+  padding: 0;
+
+  font-size: 6px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.task-priority.now {
+  color: #ef4444;
+}
+
+.task-priority.next {
+  color: #f59e0b;
+}
+
+.task-priority.later {
+  color: #10b981;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+  width: 100%;
+
+  padding: 40px 15px;
+
+  text-align: center;
+
+  border: 1px dashed #dce3eb;
+
+  border-radius: 15px;
+
+  background: white;
+}
+
+.empty-icon {
+  width: 40px;
+  height: 40px;
+
+  margin: 0 auto 10px;
+
+  border-radius: 50%;
+
+  background: #edf4ff;
+
+  color: #1976ff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+}
+
+.empty-state h3 {
+  margin: 0 0 4px;
+
+  font-size: 11px;
+}
+
+.empty-state p {
+  margin: 0;
+
+  color: #9aa3b0;
+
+  font-size: 7px;
+}
+
+/* =========================================
+   CLEAR BUTTON
+========================================= */
+
+.clear-button {
+  display: block;
+
+  margin: 17px auto 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ef4444;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   FLOATING ADD BUTTON
+========================================= */
+
+.floating-add {
+  position: fixed;
+
+  right: 17px;
+
+  bottom: calc(82px + env(safe-area-inset-bottom));
+
+  z-index: 110;
+
+  width: 47px;
+  height: 47px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #1976ff;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 7px 18px rgba(25, 118, 255, 0.3);
+
+  transition: transform 0.15s ease;
+}
+
+.floating-add:active {
+  transform: scale(0.88);
+}
+
+.floating-add span {
+  font-size: 25px;
+
+  font-weight: 300;
+
+  line-height: 1;
+}
+
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.bottom-nav {
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 100;
+
+  width: 100%;
+
+  height: 68px;
+
+  padding: 5px 8px env(safe-area-inset-bottom);
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-top: 1px solid #e6eaf0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  backdrop-filter: blur(18px);
+}
+
+.nav-item {
+  border: none;
+
+  background: transparent;
+
+  color: #a0a8b5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  border-radius: 12px;
+
+  transition: 0.15s ease;
+}
+
+.nav-item span {
+  font-size: 15px;
+
+  line-height: 1;
+}
+
+.nav-item small {
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+.nav-item.active {
+  color: #1976ff;
+}
+
+/* =========================================
+   ADD TASK MODAL
+========================================= */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 200;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  background: rgba(10, 20, 35, 0.42);
+
+  backdrop-filter: blur(4px);
+}
+
+.add-modal {
+  width: 100%;
+
+  max-height: 90dvh;
+
+  overflow-y: auto;
+
+  padding: 20px 17px calc(20px + env(safe-area-inset-bottom));
+
+  border-radius: 23px 23px 0 0;
+
+  background: white;
+
+  animation: slideUp 0.22s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.modal-header span {
+  display: block;
+
+  color: #1976ff;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.modal-header h3 {
+  margin: 4px 0 0;
+
+  font-size: 18px;
+}
+
+.close-modal {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f1f3f6;
+
+  color: #657083;
+
+  font-size: 20px;
+}
+
+.add-modal label {
+  display: block;
+
+  margin: 12px 0 5px;
+
+  color: #6e7888;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+.add-modal input {
+  width: 100%;
+
+  height: 41px;
+
+  padding: 0 11px;
+
+  border: 1px solid #e0e5ec;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #fafbfd;
+
+  color: #263143;
+
+  font-size: 11px;
+}
+
+.add-modal input:focus {
+  border-color: #1976ff;
+
+  background: white;
+}
+
+.new-task-input {
+  height: 46px !important;
+
+  font-size: 12px !important;
+}
+
+/* =========================================
+   PRIORITY PICKER
+========================================= */
+
+.priority-picker {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 7px;
+}
+
+.priority-option {
+  height: 40px;
+
+  border: 1px solid #e0e5ec;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #667085;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+.priority-option span {
+  margin-right: 3px;
+}
+
+.priority-option.selected {
+  color: white;
+
+  border-color: transparent;
+}
+
+.priority-option.now.selected {
+  background: #ef4444;
+}
+
+.priority-option.next.selected {
+  background: #f59e0b;
+}
+
+.priority-option.later.selected {
+  background: #10b981;
+}
+
+/* =========================================
+   CREATE BUTTON
+========================================= */
+
+.create-button {
+  width: 100%;
+
+  height: 45px;
+
+  margin-top: 19px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: #1976ff;
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.create-button:active {
+  transform: scale(0.98);
+}
+
+/* =========================================
+   EDIT MODE
+========================================= */
+
+.edit-container {
+  grid-column: 1 / -1;
+
+  width: 100%;
+}
+
+.edit-title {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 9px;
+
+  border: 1px solid #1976ff;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 10px;
+}
+
+.edit-fields {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 6px;
+
+  margin-top: 7px;
+}
+
+.edit-fields input {
+  width: 100%;
+
+  height: 33px;
+
+  padding: 0 6px;
+
+  border: 1px solid #e0e5ec;
+
+  border-radius: 7px;
+
+  font-size: 8px;
+}
+
+.edit-buttons {
+  display: flex;
+
+  gap: 6px;
+
+  margin-top: 7px;
+}
+
+.edit-buttons button {
+  flex: 1;
+
+  height: 32px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #1976ff;
+
+  color: white;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+.edit-buttons .cancel {
+  background: #eef0f3;
+
+  color: #596579;
+}
+
+/* =========================================
+   PHONE OPTIMIZATION
+========================================= */
+
+@media (max-width: 380px) {
+  .app-header {
+    height: 63px;
+
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .app-content {
+    height: calc(100dvh - 63px);
+
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .welcome h2 {
+    font-size: 24px;
+  }
+
+  .progress-card {
+    padding: 14px;
+  }
+
+  .task-card {
+    min-height: 50px;
+
+    padding: 9px 8px;
+
+    gap: 7px;
+  }
+
+  .task-info h4 {
+    font-size: 8px;
+  }
+
+  .task-meta {
+    font-size: 5.5px;
+  }
+
+  .task-actions button {
+    width: 20px;
+    height: 20px;
+  }
+
+  .task-check {
+    width: 21px;
+    height: 21px;
+  }
+
+  .floating-add {
+    right: 14px;
+  }
+}
+
+/* =========================================
+   DESKTOP - KEEP APP PHONE FEEL
+========================================= */
+
+@media (min-width: 700px) {
+  .app {
+    width: 390px;
+
+    height: 100dvh;
+
+    margin: 0 auto;
+
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .app-header {
+    width: 390px;
+  }
+
+  .app-content {
+    width: 390px;
+  }
+
+  .bottom-nav {
+    left: 50%;
+
+    right: auto;
+
+    width: 390px;
+
+    transform: translateX(-50%);
+  }
+
+  .floating-add {
+    right: calc(50% - 175px);
+  }
+
+  .add-modal {
+    width: 390px;
+  }
+}
+
+/* =========================================
+   REAL-DEVICE MOBILE POLISH
+   (only applies on actual touch/mobile devices,
+   never on desktop or the desktop phone-preview above)
+========================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Kill the page-level bounce/rubber-band and pull-to-refresh
+     gesture so the whole screen behaves like a native app,
+     not a scrollable webpage. */
+  html,
+  body {
+    overscroll-behavior-y: none;
+    touch-action: pan-y;
+  }
+
+  /* Remove the 300ms tap delay and stop accidental double-tap
+     zoom on every interactive control. */
+  button,
+  a,
+  .task-card,
+  .filter-button,
+  .nav-item,
+  .priority-option,
+  .task-check,
+  .floating-add,
+  .close-modal,
+  .profile-button {
+    touch-action: manipulation;
+  }
+
+  /* Native apps don't let you select/copy chrome text or pop up
+     the callout menu on a long-press of a button or icon. */
+  button,
+  .nav-item,
+  .filter-button,
+  .app-header,
+  .bottom-nav,
+  .floating-add,
+  .task-check,
+  .task-actions,
+  .task-priority,
+  .priority-picker,
+  .empty-icon,
+  .progress-card {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* iOS Safari auto-zooms the whole page when a focused input's
+     font-size is under 16px. Bump every text/date/time field up
+     to 16px here (mobile only) so focusing a field never zooms
+     the viewport, while padding/height stay the same. */
+  .add-modal input,
+  .new-task-input,
+  .edit-title,
+  .edit-fields input {
+    font-size: 16px !important;
+  }
+
+  .edit-title {
+    height: 42px;
+  }
+
+  .edit-fields input {
+    height: 36px;
+  }
+
+  /* Disable text selection drag-handles on tappable list rows,
+     but keep it selectable on the task title itself so people
+     can still copy their own task text if they want to. */
+  .task-card {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .task-info h4 {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
